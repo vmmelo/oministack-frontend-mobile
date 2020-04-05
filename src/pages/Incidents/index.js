@@ -36,7 +36,7 @@ export default function Incidents() {
     });
 
     setIncidents([...incidents, ...response.data]);
-    setTotal(response.headers["x-total-count"]);
+    setTotal(response.headers["x-total-count"] !== 'undefined' ? response.headers["x-total-count"] : 0);
     setPage(page + 1);
     setLoading(false);
   }
